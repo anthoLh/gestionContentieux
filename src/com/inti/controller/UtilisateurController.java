@@ -27,6 +27,7 @@ public class UtilisateurController {
 	public Utilisateur findOne(@PathVariable("idUtilisateur") Long idUtilisateur) {
 		return utilisateurService.findOne(Utilisateur.class, idUtilisateur);
 	}
+
 	@RequestMapping(value="utilisateurs", method = RequestMethod.POST)
 	public void saveUtilisateur(@RequestBody Utilisateur utilisateur) {
 		utilisateurService.save(utilisateur);
@@ -47,4 +48,6 @@ public class UtilisateurController {
 		currentUtilisateur.setUsername(utilisateur.getUsername());
 		utilisateurService.save(currentUtilisateur);	
 	}
+	
+	
 }
