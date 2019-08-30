@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Document implements Serializable{
@@ -19,6 +21,7 @@ public class Document implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idDocument;
+	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
 	private String nomDocument;
 	private String descriptionDocument;

@@ -7,7 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Entity;
 
 @Entity
@@ -21,7 +22,9 @@ public class Phase implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idPhase;
 	private String nomPhase;
+	@Temporal(TemporalType.DATE)
 	private Date dateDebut;
+	@Temporal(TemporalType.DATE)
 	private Date dateFin;
 	@ManyToOne
 	private Tache tache;
