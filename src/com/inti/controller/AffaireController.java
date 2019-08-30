@@ -18,25 +18,35 @@ import com.inti.service.interfaces.IAffaireService;
 public class AffaireController {
 	@Autowired
 	IAffaireService affaireService;
-	
-	@RequestMapping(value="affaires", method = RequestMethod.GET)
-	public List<Affaire> findAll(){
+
+	@RequestMapping(value = "affaires", method = RequestMethod.GET)
+	public List<Affaire> findAll() {
 		return affaireService.findAll(Affaire.class);
 	}
-	@RequestMapping(value="affaires/{idAffaire}", method = RequestMethod.GET)
+
+	@RequestMapping(value = "affaires/{idAffaire}", method = RequestMethod.GET)
 	public Affaire findOne(@PathVariable("idAffaire") Long idAffaire) {
 		return affaireService.findOne(Affaire.class, idAffaire);
 	}
-	@RequestMapping(value="affaires", method = RequestMethod.POST)
+	// A VERIFIER
+	@RequestMapping(value="affaires/{idAffaire}", method = RequestMethod.GET)
+	public Affaire findOneByName(@PathVariable("idAffaire") String name) {
+		return affaireService.findOneByName(Affaire.class, name);
+	}
+	
+	//A VERIFIER
+	@RequestMapping(value = "affaires", method = RequestMethod.POST)
 	public void saveAffaire(@RequestBody Affaire affaire) {
 		affaireService.save(affaire);
 	}
-	@RequestMapping(value="affaires/{idAffaire}", method = RequestMethod.DELETE)
+
+	@RequestMapping(value = "affaires/{idAffaire}", method = RequestMethod.DELETE)
 	public void deleteAffaire(@PathVariable("idAffaire") Long idAffaire) {
 		affaireService.remove(idAffaire);
 	}
-	@RequestMapping(value="affaires/{idAffaire}", method= RequestMethod.PUT)
-	public void updateAffaire(@PathVariable("idAffaire") Long idAffaire,@RequestBody Affaire affaire) {
+
+	@RequestMapping(value = "affaires/{idAffaire}", method = RequestMethod.PUT)
+	public void updateAffaire(@PathVariable("idAffaire") Long idAffaire, @RequestBody Affaire affaire) {
 		Affaire currentAffaire = affaireService.findOne(Affaire.class, idAffaire);
 		currentAffaire.setDescriptionAffaire(affaire.getDescriptionAffaire());
 		currentAffaire.setListDocument(affaire.getListDocument());
@@ -44,6 +54,6 @@ public class AffaireController {
 		currentAffaire.setReference(affaire.getReference());
 		currentAffaire.setStatut(affaire.getStatut());
 		currentAffaire.setTitre(affaire.getTitre());
-		affaireService.save(currentAffaire);	
+		affaireService.save(currentAffaire);
 	}
 }

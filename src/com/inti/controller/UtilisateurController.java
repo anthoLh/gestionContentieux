@@ -27,6 +27,14 @@ public class UtilisateurController {
 	public Utilisateur findOne(@PathVariable("idUtilisateur") Long idUtilisateur) {
 		return utilisateurService.findOne(Utilisateur.class, idUtilisateur);
 	}
+	
+	// A VERIFIER
+	@RequestMapping(value="utilisateurs/{idUtilisateur}", method = RequestMethod.GET)
+	public Utilisateur findOneByName(@PathVariable("idUtilisateur") String name) {
+		return utilisateurService.findOneByName(Utilisateur.class, name);
+	}
+	
+	//A VERIFIER
 
 	@RequestMapping(value="utilisateurs", method = RequestMethod.POST)
 	public void saveUtilisateur(@RequestBody Utilisateur utilisateur) {
