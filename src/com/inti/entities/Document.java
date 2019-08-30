@@ -71,14 +71,6 @@ public class Document implements Serializable{
 	public void setAffaire(Affaire affaire) {
 		this.affaire = affaire;
 	}
-
-
-
-	@Override
-	public String toString() {
-		return "Document [idDocument=" + idDocument + ", dateCreation=" + dateCreation + ", nomDocument=" + nomDocument
-				+ ", descriptionDocument=" + descriptionDocument + "]";
-	}
 	
 
 }

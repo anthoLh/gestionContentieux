@@ -77,10 +77,5 @@ public class Phase implements Serializable{
 		this.tache = tache;
 	}
 
-	@Override
-	public String toString() {
-		return "Phase [nomPhase=" + nomPhase + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", tache=" + tache
-				+ "]";
-	}
 
 }

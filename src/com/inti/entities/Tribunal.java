@@ -86,10 +86,5 @@ public class Tribunal implements Serializable {
 		this.tache = tache;
 	}
 
-	@Override
-	public String toString() {
-		return "Tache [adresse=" + adresse + ", fax=" + fax + ", tel=" + tel + ", region=" + region + ", tache=" + tache
-				+ "]";
-	}
 
 }

@@ -121,12 +121,6 @@ public class Utilisateur implements Serializable {
 		this.listTache = listTache;
 	}
 
-	@Override
-	public String toString() {
-		return "Utilisateur [email=" + email + ", nomUtilisateur=" + nomUtilisateur + ", prenomUtilisateur="
-				+ prenomUtilisateur + ", username=" + username + ", password=" + password + ", enabled=" + enabled
-				+ "]";
-	}
 	
 	
 
