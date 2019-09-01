@@ -14,8 +14,8 @@ public class UtilisateurDAO extends ManagerDAO<Utilisateur> implements IUtilisat
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	public Utilisateur findOneByName(Class<Utilisateur> utilisateur, String name) {
-		Session  session = this.sessionFactory.getCurrentSession();
-		return (Utilisateur)session.get(utilisateur, name);
+	public Utilisateur findOneByName(String name) {
+		return null;
+
 	}
 }

@@ -17,8 +17,8 @@ public class UtilisateurService extends ManagerService<Utilisateur> implements I
 	IUtilisateurDAO daoUtilisateur;
 	
 	@Override
-	public Utilisateur findOneByName(Class<Utilisateur> utilisateur, String name) {
-		return daoUtilisateur.findOneByName(utilisateur, name);
+	public Utilisateur findOneByName(String name) {
+		return daoUtilisateur.findOneByName(name);
 	}
 
 }

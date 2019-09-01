@@ -13,8 +13,8 @@ public class AffaireDAO extends ManagerDAO<Affaire> implements IAffaireDAO{
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	public Affaire findOneByName(Class<Affaire> affaire, String name) {
-		Session  session = this.sessionFactory.getCurrentSession();
-		return (Affaire)session.get(affaire, name);
+	public Affaire findOneByName(String name) {
+		return null;
+
 	}
 }

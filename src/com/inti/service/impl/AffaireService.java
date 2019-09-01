@@ -15,8 +15,8 @@ public class AffaireService extends ManagerService<Affaire> implements IAffaireS
 	IAffaireDAO daoAffaire;
 	
 	@Override
-	public Affaire findOneByName(Class<Affaire> affaire, String name) {
-		return daoAffaire.findOneByName(affaire, name);
+	public Affaire findOneByName(String name) {
+		return daoAffaire.findOneByName(name);
 	}
 
 }
