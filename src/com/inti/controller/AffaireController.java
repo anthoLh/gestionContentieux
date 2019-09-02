@@ -54,6 +54,7 @@ public class AffaireController {
 		currentAffaire.setReference(affaire.getReference());
 		currentAffaire.setStatut(affaire.getStatut());
 		currentAffaire.setTitre(affaire.getTitre());
+		System.out.println("Affaire modifié avec succès");
 		affaireService.save(currentAffaire);
 	}
 }
