@@ -23,7 +23,7 @@ public class AffaireController {
 		return affaireService.findAll(Affaire.class);
 	}
 
-	@RequestMapping(value = "affaires/{idAffaire}", method = RequestMethod.GET)
+	@RequestMapping(value = "affaires/id/{idAffaire}", method = RequestMethod.GET)
 	public Affaire findOne(@PathVariable("idAffaire") Long idAffaire) {
 		return affaireService.findOne(Affaire.class, idAffaire);
 	}
@@ -39,13 +39,13 @@ public class AffaireController {
 		affaireService.remove(a);
 	};
 	
-	/*@RequestMapping(value="affaires/{titre}", method = RequestMethod.GET)
+	@RequestMapping(value="affaires/titre/{titre}", method = RequestMethod.GET)
 	public Affaire findOneByTitreAffaire(@PathVariable("titre") String titre) {
 		return affaireService.findOneByTitreAffaire(titre);
-	}*/
+	}
 	
 
-	@RequestMapping(value = "affaires/{idAffaire}", method = RequestMethod.PUT)
+	@RequestMapping(value = "affaires/update/{idAffaire}", method = RequestMethod.PUT)
 	public void updateAffaire(@PathVariable("idAffaire") Long idAffaire, @RequestBody Affaire affaire) {
 		Affaire currentAffaire = affaireService.findOne(Affaire.class, idAffaire);
 		currentAffaire.setDescriptionAffaire(affaire.getDescriptionAffaire());
