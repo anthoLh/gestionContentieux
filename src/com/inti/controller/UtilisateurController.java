@@ -20,11 +20,11 @@ public class UtilisateurController {
 	IUtilisateurService utilisateurService;
 	
 	@RequestMapping(value="utilisateurs", method = RequestMethod.GET)
-	public List<Utilisateur> findAll(){
+	public List<Utilisateur> findAllUtilisateur(){
 		return utilisateurService.findAll(Utilisateur.class);
 	}
 	@RequestMapping(value="utilisateurs/{idUtilisateur}", method = RequestMethod.GET)
-	public Utilisateur findOne(@PathVariable("idUtilisateur") Long idUtilisateur) {
+	public Utilisateur findOneUtilisateur(@PathVariable("idUtilisateur") Long idUtilisateur) {
 		return utilisateurService.findOne(Utilisateur.class, idUtilisateur);
 	}
 	
@@ -46,7 +46,7 @@ public class UtilisateurController {
 		Utilisateur currentUtilisateur = utilisateurService.findOne(Utilisateur.class, idUtilisateur);
 		currentUtilisateur.setEmail(utilisateur.getEmail());
 		currentUtilisateur.setListRole(utilisateur.getListRole());
-		currentUtilisateur.setListTache(utilisateur.getListTache());
+		//currentUtilisateur.setListTache(utilisateur.getListTache());
 		currentUtilisateur.setNomUtilisateur(utilisateur.getNomUtilisateur());
 		currentUtilisateur.setPassword(utilisateur.getPassword());
 		currentUtilisateur.setPrenomUtilisateur(utilisateur.getPrenomUtilisateur());
