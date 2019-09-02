@@ -42,6 +42,19 @@ public class Utilisateur implements Serializable {
 	public Utilisateur() {
 	}
 
+	public Utilisateur(String email, String nomUtilisateur, String prenomUtilisateur, String username, String password,
+			boolean enabled, Set<Role> listRole, Set<Tache> listTache) {
+		super();
+		this.email = email;
+		this.nomUtilisateur = nomUtilisateur;
+		this.prenomUtilisateur = prenomUtilisateur;
+		this.username = username;
+		this.password = password;
+		this.enabled = enabled;
+		this.listRole = listRole;
+		this.listTache = listTache;
+	}
+
 	public Long getIdUtilisateur() {
 		return idUtilisateur;
 	}
@@ -107,11 +120,11 @@ public class Utilisateur implements Serializable {
 	}
 
 	public Set<Tache> getListTache() {
-	 return listTache;
-	 }
-	
-	 public void setListTache(Set<Tache> listTache) {
-	 this.listTache = listTache;
-	 }
+		return listTache;
+	}
+
+	public void setListTache(Set<Tache> listTache) {
+		this.listTache = listTache;
+	}
 
 }

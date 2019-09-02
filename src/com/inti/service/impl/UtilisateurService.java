@@ -21,4 +21,9 @@ public class UtilisateurService extends ManagerService<Utilisateur> implements I
 		return daoUtilisateur.findOneByName(name);
 	}
 
+	@Override
+	public Utilisateur findOneByUsername(String username) {
+		return daoUtilisateur.findOneByUsername(username);
+	}
+
 }

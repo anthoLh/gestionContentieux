@@ -33,9 +33,9 @@ public class TacheController {
 	}
 	@RequestMapping(value="taches/{idTache}", method = RequestMethod.DELETE)
 	public void deleteTache(@PathVariable("idTache") Long idTache) {
-		Tache t= tacheService.findOne(Tache.class, idTache);
+		Tache t = tacheService.findOne(Tache.class, idTache);
 		tacheService.remove(t);
-	} 
+	}
 	@RequestMapping(value="taches/{idTache}", method= RequestMethod.PUT)
 	public void updateTache(@PathVariable("idTache") Long idTache,@RequestBody Tache tache) {
 		Tache currentTache = tacheService.findOne(Tache.class, idTache);
