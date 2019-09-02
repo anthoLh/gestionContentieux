@@ -34,10 +34,10 @@ public class PhaseController {
 		phaseService.save(phase);
 	}
 
-	@RequestMapping(value = "phases/{idPhase}", method = RequestMethod.DELETE)
+	/*@RequestMapping(value = "phases/{idPhase}", method = RequestMethod.DELETE)
 	public void deletePhase(@PathVariable("idPhase") Long idPhase) {
 		phaseService.remove(idPhase);
-	}
+	}*/
 
 	@RequestMapping(value = "phase/{idPhase}", method = RequestMethod.PUT)
 	public void updatePhase(@PathVariable("idPhase") Long idPhase, @RequestBody Phase phase) {

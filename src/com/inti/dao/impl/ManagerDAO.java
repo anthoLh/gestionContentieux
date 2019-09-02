@@ -26,9 +26,9 @@ public class ManagerDAO<T> implements IDAO<T> {
 		session.update(obj);
 	}
 
-	public void remove(Long id) {
+	public void remove(T obj) {
 		Session  session = this.sessionFactory.getCurrentSession();
-		session.delete(id);
+		session.delete(obj);
 	}
 
 	public List<T> findAll(Class<?> c) {

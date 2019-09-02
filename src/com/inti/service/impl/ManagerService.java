@@ -25,8 +25,8 @@ public class ManagerService<T> implements IService<T> {
 		dao.update(obj);
 	}
 
-	public void remove(Long id) {
-		dao.remove(id);
+	public void remove(T obj) {
+		dao.remove(obj);
 	}
 
 	public List<T> findAll(Class<?> c) {

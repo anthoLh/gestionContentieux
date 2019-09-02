@@ -31,10 +31,10 @@ public class RoleController {
 	public void saveRole(@RequestBody Role role) {
 		roleService.save(role);
 	}
-	@RequestMapping(value="roles/{idRole}", method = RequestMethod.DELETE)
+	/*@RequestMapping(value="roles/{idRole}", method = RequestMethod.DELETE)
 	public void deleteRole(@PathVariable("idRole") Long idRole) {
 		roleService.remove(idRole);
-	}
+	} */
 	@RequestMapping(value="roles/{idRole}", method= RequestMethod.PUT)
 	public void updateRole(@PathVariable("idRole") Long idRole,@RequestBody Role role) {
 		Role currentRole = roleService.findOne(Role.class, idRole);

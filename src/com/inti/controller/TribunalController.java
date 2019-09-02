@@ -34,10 +34,10 @@ public class TribunalController {
 		tribunalService.save(tribunal);
 	}
 
-	@RequestMapping(value = "tribunals/{idTribunal}", method = RequestMethod.DELETE)
+	/*@RequestMapping(value = "tribunals/{idTribunal}", method = RequestMethod.DELETE)
 	public void deleteTribunal(@PathVariable("idTribunal") Long idTribunal) {
 		tribunalService.remove(idTribunal);
-	}
+	}*/
 
 	@RequestMapping(value = "tribunal/{idTribunal}", method = RequestMethod.PUT)
 	public void updateTribunal(@PathVariable("idTribunal") Long idTribunal, @RequestBody Tribunal tribunal) {

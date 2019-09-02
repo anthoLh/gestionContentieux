@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.inti.entities.Affaire;
 import com.inti.entities.Document;
 import com.inti.service.interfaces.IDocumentService;
 
@@ -36,7 +37,8 @@ public class DocumentController {
 
 	@RequestMapping(value = "documents/{idDocument}", method = RequestMethod.DELETE)
 	public void deleteDocument(@PathVariable("idDocument") Long idDocument) {
-		documentService.remove(idDocument);
+		Document d= documentService.findOne(Document.class, idDocument);
+		documentService.remove(d);
 	}
 
 	@RequestMapping(value = "document/{idDocument}", method = RequestMethod.PUT)

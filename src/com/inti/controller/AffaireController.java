@@ -41,8 +41,10 @@ public class AffaireController {
 
 	@RequestMapping(value = "affaires/{idAffaire}", method = RequestMethod.DELETE)
 	public void deleteAffaire(@PathVariable("idAffaire") Long idAffaire) {
-		affaireService.remove(idAffaire);
-	}
+		Affaire a= affaireService.findOne(Affaire.class, idAffaire);
+		affaireService.remove(a);
+	};
+	
 
 	@RequestMapping(value = "affaires/{idAffaire}", method = RequestMethod.PUT)
 	public void updateAffaire(@PathVariable("idAffaire") Long idAffaire, @RequestBody Affaire affaire) {
