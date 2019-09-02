@@ -11,11 +11,11 @@ import com.inti.dao.interfaces.IUtilisateurDAO;
 import com.inti.entities.Utilisateur;
 
 @Repository
-public class UtilisateurDAO extends ManagerDAO<Utilisateur> implements IUtilisateurDAO{
-	
+public class UtilisateurDAO extends ManagerDAO<Utilisateur> implements IUtilisateurDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
+	@Override
 	public Utilisateur findOneByName(String name) {
 		return null;
 	}

@@ -39,14 +39,15 @@ public class UtilisateurController {
 	}
 	@RequestMapping(value="utilisateurs/{idUtilisateur}", method = RequestMethod.DELETE)
 	public void deleteUtilisateur(@PathVariable("idUtilisateur") Long idUtilisateur) {
-		utilisateurService.remove(idUtilisateur);
+		Utilisateur u= utilisateurService.findOne(Utilisateur.class, idUtilisateur);
+		utilisateurService.remove(u);
 	}
 	@RequestMapping(value="utilisateurs/{idUtilisateur}", method= RequestMethod.PUT)
 	public void updateUtilisateur(@PathVariable("idUtilisateur") Long idUtilisateur,@RequestBody Utilisateur utilisateur) {
 		Utilisateur currentUtilisateur = utilisateurService.findOne(Utilisateur.class, idUtilisateur);
 		currentUtilisateur.setEmail(utilisateur.getEmail());
 		currentUtilisateur.setListRole(utilisateur.getListRole());
-		//currentUtilisateur.setListTache(utilisateur.getListTache());
+		currentUtilisateur.setListTache(utilisateur.getListTache());
 		currentUtilisateur.setNomUtilisateur(utilisateur.getNomUtilisateur());
 		currentUtilisateur.setPassword(utilisateur.getPassword());
 		currentUtilisateur.setPrenomUtilisateur(utilisateur.getPrenomUtilisateur());

@@ -8,7 +8,7 @@ public interface IService<T> {
 
 	void update(T obj);
 
-	void remove(Long id);
+	void remove(T obj);
 
 	List<T> findAll(Class<?> c);
 

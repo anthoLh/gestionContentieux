@@ -36,7 +36,8 @@ public class DocumentController {
 
 	@RequestMapping(value = "documents/{idDocument}", method = RequestMethod.DELETE)
 	public void deleteDocument(@PathVariable("idDocument") Long idDocument) {
-		documentService.remove(idDocument);
+		Document d= documentService.findOne(Document.class, idDocument);
+		documentService.remove(d);
 	}
 
 	@RequestMapping(value = "document/{idDocument}", method = RequestMethod.PUT)

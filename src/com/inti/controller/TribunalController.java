@@ -36,7 +36,8 @@ public class TribunalController {
 
 	@RequestMapping(value = "tribunals/{idTribunal}", method = RequestMethod.DELETE)
 	public void deleteTribunal(@PathVariable("idTribunal") Long idTribunal) {
-		tribunalService.remove(idTribunal);
+		Tribunal t = tribunalService.findOne(Tribunal.class, idTribunal);
+		tribunalService.remove(t);
 	}
 
 	@RequestMapping(value = "tribunal/{idTribunal}", method = RequestMethod.PUT)

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.inti.entities.Phase;
 import com.inti.service.interfaces.IPhaseService;
 
@@ -36,7 +37,8 @@ public class PhaseController {
 
 	@RequestMapping(value = "phases/{idPhase}", method = RequestMethod.DELETE)
 	public void deletePhase(@PathVariable("idPhase") Long idPhase) {
-		phaseService.remove(idPhase);
+		Phase p = phaseService.findOne(Phase.class, idPhase);
+		phaseService.remove(p);
 	}
 
 	@RequestMapping(value = "phase/{idPhase}", method = RequestMethod.PUT)
@@ -46,7 +48,7 @@ public class PhaseController {
 		currentPhase.setDateDebut(phase.getDateDebut());
 		currentPhase.setDateFin(phase.getDateFin());
 		currentPhase.setTache(phase.getTache());
-		
+
 		phaseService.save(currentPhase);
 	}
 
