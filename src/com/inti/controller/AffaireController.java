@@ -28,11 +28,6 @@ public class AffaireController {
 	public Affaire findOne(@PathVariable("idAffaire") Long idAffaire) {
 		return affaireService.findOne(Affaire.class, idAffaire);
 	}
-
-	@RequestMapping(value="affaires/{nomAffaire}", method = RequestMethod.GET)
-	public Affaire findOneByName(@PathVariable("nomAffaire") String name) {
-		return affaireService.findOneByName(name);
-	}
 	
 	@RequestMapping(value = "affaires", method = RequestMethod.POST)
 	public void saveAffaire(@RequestBody Affaire affaire) {

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.inti.entities.Affaire;
 import com.inti.entities.Utilisateur;
 import com.inti.service.interfaces.IUtilisateurService;
 
@@ -48,7 +47,7 @@ public class UtilisateurController {
 		Utilisateur currentUtilisateur = utilisateurService.findOne(Utilisateur.class, idUtilisateur);
 		currentUtilisateur.setEmail(utilisateur.getEmail());
 		currentUtilisateur.setListRole(utilisateur.getListRole());
-		//currentUtilisateur.setListTache(utilisateur.getListTache());
+		// currentUtilisateur.setListTache(utilisateur.getListTache());
 		currentUtilisateur.setNomUtilisateur(utilisateur.getNomUtilisateur());
 		currentUtilisateur.setPassword(utilisateur.getPassword());
 		currentUtilisateur.setPrenomUtilisateur(utilisateur.getPrenomUtilisateur());

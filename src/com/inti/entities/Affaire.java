@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,9 +26,9 @@ public class Affaire implements Serializable{
 	private String titre;
 	private String descriptionAffaire;
 	private int statut;
-	@OneToMany(mappedBy="affaire")
+	@OneToMany(mappedBy="affaire", fetch=FetchType.EAGER)
 	private Set<Tache> listTache = new HashSet<Tache>();
-	@OneToMany(mappedBy="affaire")
+	@OneToMany(mappedBy="affaire",fetch=FetchType.EAGER)
 	private Set<Document> listDocument = new HashSet<Document>();
 	public Affaire() {
 	}

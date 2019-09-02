@@ -19,7 +19,7 @@ public class TacheController {
 	@Autowired
 	ITacheService tacheService;
 	
-	@RequestMapping(value="taches", method = RequestMethod.GET)
+	@RequestMapping(value = "taches", method = RequestMethod.GET)
 	public List<Tache> findAll(){
 		return tacheService.findAll(Tache.class);
 	}
@@ -31,10 +31,11 @@ public class TacheController {
 	public void saveTache(@RequestBody Tache tache) {
 		tacheService.save(tache);
 	}
-	/* @RequestMapping(value="taches/{idTache}", method = RequestMethod.DELETE)
+	@RequestMapping(value="taches/{idTache}", method = RequestMethod.DELETE)
 	public void deleteTache(@PathVariable("idTache") Long idTache) {
-		tacheService.remove(idTache);
-	} */
+		Tache t= tacheService.findOne(Tache.class, idTache);
+		tacheService.remove(t);
+	} 
 	@RequestMapping(value="taches/{idTache}", method= RequestMethod.PUT)
 	public void updateTache(@PathVariable("idTache") Long idTache,@RequestBody Tache tache) {
 		Tache currentTache = tacheService.findOne(Tache.class, idTache);

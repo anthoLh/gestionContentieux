@@ -29,19 +29,18 @@ public class Utilisateur implements Serializable {
 	private String prenomUtilisateur;
 	private String username;
 	private String password;
-	private boolean enabled=true;
-	
+	private boolean enabled = true;
+
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "profil", joinColumns = {
 			@JoinColumn(name = "id_utilisateur", referencedColumnName = "idUtilisateur") }, inverseJoinColumns = {
 					@JoinColumn(name = "id_role", table = "role", referencedColumnName = "idRole") })
 	private Set<Role> listRole = new HashSet<Role>();
-//	@OneToMany (mappedBy="utilisateur")
-//	private Set<Tache> listTache = new HashSet<Tache>(); 
+	@OneToMany(mappedBy = "utilisateur", fetch = FetchType.EAGER)
+	private Set<Tache> listTache = new HashSet<Tache>();
 
 	public Utilisateur() {
 	}
-
 
 	public Long getIdUtilisateur() {
 		return idUtilisateur;
@@ -107,15 +106,12 @@ public class Utilisateur implements Serializable {
 		this.enabled = enabled;
 	}
 
-//	public Set<Tache> getListTache() {
-//		return listTache;
-//	}
-//
-//	public void setListTache(Set<Tache> listTache) {
-//		this.listTache = listTache;
-//	}
-
+	public Set<Tache> getListTache() {
+	 return listTache;
+	 }
 	
-	
+	 public void setListTache(Set<Tache> listTache) {
+	 this.listTache = listTache;
+	 }
 
 }
