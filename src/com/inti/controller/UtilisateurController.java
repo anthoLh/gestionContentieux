@@ -48,7 +48,7 @@ public class UtilisateurController {
 		Utilisateur currentUtilisateur = utilisateurService.findOne(Utilisateur.class, idUtilisateur);
 		currentUtilisateur.setEmail(utilisateur.getEmail());
 		currentUtilisateur.setListRole(utilisateur.getListRole());
-		currentUtilisateur.setListTache(utilisateur.getListTache());
+		//currentUtilisateur.setListTache(utilisateur.getListTache());
 		currentUtilisateur.setNomUtilisateur(utilisateur.getNomUtilisateur());
 		currentUtilisateur.setPassword(utilisateur.getPassword());
 		currentUtilisateur.setPrenomUtilisateur(utilisateur.getPrenomUtilisateur());

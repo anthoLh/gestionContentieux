@@ -36,8 +36,8 @@ public class Utilisateur implements Serializable {
 			@JoinColumn(name = "id_utilisateur", referencedColumnName = "idUtilisateur") }, inverseJoinColumns = {
 					@JoinColumn(name = "id_role", table = "role", referencedColumnName = "idRole") })
 	private Set<Role> listRole = new HashSet<Role>();
-	@OneToMany (mappedBy="utilisateur")
-	private Set<Tache> listTache = new HashSet<Tache>(); 
+//	@OneToMany (mappedBy="utilisateur")
+//	private Set<Tache> listTache = new HashSet<Tache>(); 
 
 	public Utilisateur() {
 	}
@@ -107,13 +107,13 @@ public class Utilisateur implements Serializable {
 		this.enabled = enabled;
 	}
 
-	public Set<Tache> getListTache() {
-		return listTache;
-	}
-
-	public void setListTache(Set<Tache> listTache) {
-		this.listTache = listTache;
-	}
+//	public Set<Tache> getListTache() {
+//		return listTache;
+//	}
+//
+//	public void setListTache(Set<Tache> listTache) {
+//		this.listTache = listTache;
+//	}
 
 	
 	

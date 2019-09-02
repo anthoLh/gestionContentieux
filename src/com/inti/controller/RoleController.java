@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.inti.entities.Role;
 import com.inti.service.interfaces.IRoleService;
 
@@ -31,10 +32,11 @@ public class RoleController {
 	public void saveRole(@RequestBody Role role) {
 		roleService.save(role);
 	}
-	/*@RequestMapping(value="roles/{idRole}", method = RequestMethod.DELETE)
+	@RequestMapping(value="roles/{idRole}", method = RequestMethod.DELETE)
 	public void deleteRole(@PathVariable("idRole") Long idRole) {
-		roleService.remove(idRole);
-	} */
+		Role r = roleService.findOne(Role.class, idRole);
+		roleService.remove(r);
+	} 
 	@RequestMapping(value="roles/{idRole}", method= RequestMethod.PUT)
 	public void updateRole(@PathVariable("idRole") Long idRole,@RequestBody Role role) {
 		Role currentRole = roleService.findOne(Role.class, idRole);
