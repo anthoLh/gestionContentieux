@@ -23,14 +23,14 @@ public class UtilisateurController {
 	public List<Utilisateur> findAllUtilisateur(){
 		return utilisateurService.findAll(Utilisateur.class);
 	}
-	@RequestMapping(value="utilisateurs/{idUtilisateur}", method = RequestMethod.GET)
+	@RequestMapping(value="utilisateurs/id/{idUtilisateur}", method = RequestMethod.GET)
 	public Utilisateur findOneUtilisateur(@PathVariable("idUtilisateur") Long idUtilisateur) {
 		return utilisateurService.findOne(Utilisateur.class, idUtilisateur);
-	}
+	} 
 	
-	@RequestMapping(value="utilisateurs/{nomUtilisateur}", method = RequestMethod.GET)
-	public Utilisateur findOneByName(@PathVariable("nomUtilisateur") String name) {
-		return utilisateurService.findOneByName(name);
+	@RequestMapping(value="utilisateurs/nomUtilisateur/{nomUtilisateur}", method = RequestMethod.GET)
+	public List<Utilisateur> findByUsername(@PathVariable("nomUtilisateur") String nomUtilisateur) {
+		return utilisateurService.findOneByName(nomUtilisateur);
 	}
 
 	@RequestMapping(value="utilisateurs", method = RequestMethod.POST)

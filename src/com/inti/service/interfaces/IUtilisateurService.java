@@ -1,8 +1,10 @@
 package com.inti.service.interfaces;
 
+import java.util.List;
+
 import com.inti.entities.Utilisateur;
 
 public interface IUtilisateurService extends IService<Utilisateur>{
-	Utilisateur findOneByName(String name);
+	List<Utilisateur> findOneByName(String nomUtilisateur);
 	Utilisateur findOneByUsername(String username);
 }

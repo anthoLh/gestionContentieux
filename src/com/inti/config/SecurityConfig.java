@@ -21,7 +21,7 @@ import com.inti.service.interfaces.IAppUserDetailsService;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-	@Autowired
+@Autowired
 	private IAppUserDetailsService userDetailsService;
 
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -58,5 +58,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
 		bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
 		return bean;
-	}
+	} 
 }

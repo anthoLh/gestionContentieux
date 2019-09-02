@@ -3,5 +3,5 @@ package com.inti.service.interfaces;
 import com.inti.entities.Affaire;
 
 public interface IAffaireService extends IService<Affaire>{
-	Affaire findOneByName(String name);
+	Affaire findOneByTitreAffaire(String titre);
 }

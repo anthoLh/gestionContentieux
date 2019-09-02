@@ -1,7 +1,6 @@
 package com.inti.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,6 +38,11 @@ public class AffaireController {
 		Affaire a= affaireService.findOne(Affaire.class, idAffaire);
 		affaireService.remove(a);
 	};
+	
+	/*@RequestMapping(value="affaires/{titre}", method = RequestMethod.GET)
+	public Affaire findOneByTitreAffaire(@PathVariable("titre") String titre) {
+		return affaireService.findOneByTitreAffaire(titre);
+	}*/
 	
 
 	@RequestMapping(value = "affaires/{idAffaire}", method = RequestMethod.PUT)

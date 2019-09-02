@@ -1,5 +1,7 @@
 package com.inti.dao.impl;
 
+import java.util.List;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -16,8 +18,11 @@ public class UtilisateurDAO extends ManagerDAO<Utilisateur> implements IUtilisat
 	private SessionFactory sessionFactory;
 
 	@Override
-	public Utilisateur findOneByName(String name) {
-		return null;
+	public List<Utilisateur> findOneByName(String nomUtilisateur) {
+		Session session = this.sessionFactory.getCurrentSession();
+		Criteria crit = session.createCriteria(Utilisateur.class);
+		crit.add(Restrictions.eq("nomUtilisateur", nomUtilisateur));
+		return (List<Utilisateur>) crit.list();
 	}
 
 	@Override

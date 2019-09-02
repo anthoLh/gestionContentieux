@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.inti.entities.Utilisateur;
 
-public class UtilisateurDetail implements UserDetails{
+public class UtilisateurDetail implements UserDetails {
 
 	/**
 	 * 
@@ -63,5 +63,4 @@ public class UtilisateurDetail implements UserDetails{
 	public boolean isEnabled() {
 		return true;
 	}
-
 }

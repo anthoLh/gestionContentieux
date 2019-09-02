@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.inti.dao.interfaces.IDAO;
+import com.inti.entities.Utilisateur;
 
 @Repository("daoGeneric")
 public class ManagerDAO<T> implements IDAO<T> {
@@ -41,5 +42,7 @@ public class ManagerDAO<T> implements IDAO<T> {
 		Session  session = this.sessionFactory.getCurrentSession();
 		return (T) session.get(c, id);
 	}
+
+
 
 }

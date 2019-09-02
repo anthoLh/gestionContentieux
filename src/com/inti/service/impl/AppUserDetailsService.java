@@ -37,6 +37,5 @@ public class AppUserDetailsService implements IAppUserDetailsService{
 		utilisateurDetail.setAuthorities(authorities);
 		return utilisateurDetail;
 	}
-	
 
 }
