@@ -1,13 +1,15 @@
 package com.inti.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
-
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Tribunal implements Serializable {
@@ -23,20 +25,21 @@ public class Tribunal implements Serializable {
 	private Double fax;
 	private Double tel;
 	private String region;
-	@OneToOne
-	private Tache tache;
+	@OneToMany(mappedBy = "tribunal", fetch = FetchType.EAGER)
+	private Set<Tache> listTache = new HashSet<>();
 
 	public Tribunal() {
 	}
 
-	public Tribunal(String adresse, Double fax, Double tel, String region, Tache tache) {
+	public Tribunal(String adresse, Double fax, Double tel, String region, Set<Tache> listTache) {
 		super();
 		this.adresse = adresse;
 		this.fax = fax;
 		this.tel = tel;
 		this.region = region;
-		this.tache = tache;
+		this.listTache = listTache;
 	}
+
 
 	public Long getIdTribunal() {
 		return idTribunal;
@@ -78,13 +81,12 @@ public class Tribunal implements Serializable {
 		this.region = region;
 	}
 
-	public Tache getTache() {
-		return tache;
+	public Set<Tache> getListTache() {
+		return listTache;
 	}
 
-	public void setTache(Tache tache) {
-		this.tache = tache;
+	public void setListTache(Set<Tache> listTache) {
+		this.listTache = listTache;
 	}
-
 
 }

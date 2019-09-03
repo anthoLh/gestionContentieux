@@ -47,7 +47,7 @@ public class TribunalController {
 		currentTribunal.setFax(tribunal.getFax());
 		currentTribunal.setTel(tribunal.getTel());
 		currentTribunal.setRegion(tribunal.getRegion());
-		currentTribunal.setTache(tribunal.getTache());
+		currentTribunal.setListTache(tribunal.getListTache());
 
 		tribunalService.save(currentTribunal);
 	}

@@ -38,7 +38,7 @@ public class Tache implements Serializable {
 	private Tribunal tribunal;
 
 	@OneToMany(mappedBy = "tache", fetch = FetchType.EAGER)
-	private Set<Phase> listPhase = new HashSet<Phase>();
+	private Set<Phase> listPhase = new HashSet<>();
 
 	public Tache() {
 	}
