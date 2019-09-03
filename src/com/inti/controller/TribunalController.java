@@ -40,7 +40,7 @@ public class TribunalController {
 		tribunalService.remove(t);
 	}
 
-	@RequestMapping(value = "tribunal/{idTribunal}", method = RequestMethod.PUT)
+	@RequestMapping(value = "tribunals/{idTribunal}", method = RequestMethod.PUT)
 	public void updateTribunal(@PathVariable("idTribunal") Long idTribunal, @RequestBody Tribunal tribunal) {
 		Tribunal currentTribunal = tribunalService.findOne(Tribunal.class, idTribunal);
 		currentTribunal.setAdresse(tribunal.getAdresse());
@@ -48,8 +48,7 @@ public class TribunalController {
 		currentTribunal.setTel(tribunal.getTel());
 		currentTribunal.setRegion(tribunal.getRegion());
 		currentTribunal.setListTache(tribunal.getListTache());
-
-		tribunalService.save(currentTribunal);
+		tribunalService.update(currentTribunal);
 	}
 
 }

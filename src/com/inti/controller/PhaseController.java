@@ -48,8 +48,7 @@ public class PhaseController {
 		currentPhase.setDateDebut(phase.getDateDebut());
 		currentPhase.setDateFin(phase.getDateFin());
 		currentPhase.setTache(phase.getTache());
-
-		phaseService.save(currentPhase);
+		phaseService.update(currentPhase);
 	}
 
 }

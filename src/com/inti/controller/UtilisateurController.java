@@ -52,7 +52,7 @@ public class UtilisateurController {
 		currentUtilisateur.setPassword(utilisateur.getPassword());
 		currentUtilisateur.setPrenomUtilisateur(utilisateur.getPrenomUtilisateur());
 		currentUtilisateur.setUsername(utilisateur.getUsername());
-		utilisateurService.save(currentUtilisateur);	
+		utilisateurService.update(currentUtilisateur);	
 	}
 	
 	
