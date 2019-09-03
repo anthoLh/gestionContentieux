@@ -46,7 +46,7 @@ public class TacheController {
 		currentTache.setTitre(tache.getTitre());
 		currentTache.setTribunal(tache.getTribunal());
 		currentTache.setUtilisateur(tache.getUtilisateur());
-		tacheService.save(currentTache);
+		tacheService.update(currentTache);
 		
 	}
 }

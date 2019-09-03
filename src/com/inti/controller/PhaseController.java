@@ -49,7 +49,7 @@ public class PhaseController {
 		currentPhase.setDateFin(phase.getDateFin());
 		currentPhase.setTache(phase.getTache());
 
-		phaseService.save(currentPhase);
+		phaseService.update(currentPhase);
 	}
 
 }

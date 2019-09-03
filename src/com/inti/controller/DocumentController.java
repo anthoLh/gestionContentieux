@@ -48,7 +48,7 @@ public class DocumentController {
 		currentDocument.setDescriptionDocument(document.getDescriptionDocument());
 		currentDocument.setAffaire(document.getAffaire());
 		
-		documentService.save(currentDocument);
+		documentService.update(currentDocument);
 	}
 
 }
