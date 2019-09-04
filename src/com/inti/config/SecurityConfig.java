@@ -30,15 +30,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	protected void configure(final HttpSecurity http) throws Exception {
-		http.csrf().disable()
-			.authorizeRequests()
-				.antMatchers("/affaires/**").hasRole("ADMIN")
-				.antMatchers("/phases/**").hasRole("COMPTABLE")
-				.antMatchers("/login*").permitAll().anyRequest()
-			.authenticated().and().cors().and()
-			.formLogin().loginProcessingUrl("/login")
-			.and().logout()
-				.logoutUrl("/logout").deleteCookies("JSESSIONID").permitAll().and().httpBasic().and();
+		http.csrf().disable().authorizeRequests().antMatchers("/affaires/**").hasRole("ADMIN").antMatchers("/phases/**")
+				.hasRole("COMPTABLE").antMatchers("/login*").permitAll().anyRequest().authenticated().and().cors().and()
+				.formLogin().loginProcessingUrl("/login").and().logout().logoutUrl("/logout")
+				.deleteCookies("JSESSIONID").permitAll().and().httpBasic().and();
 	}
 
 	@Bean
