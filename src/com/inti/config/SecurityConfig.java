@@ -26,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/users/**","/utilisateurs/**", "/affaires/**", "/documents/**", "/tribunals/**","/tribunaux/**", "/updateUtilisateur/**");
+		web.ignoring().antMatchers("/users/**","/utilisateurs/**", "/affaires/**", "/documents/**", "/tribunals/**","/tribunaux/**", "/updateUtilisateur/**", "/taches/**");
 	}
 
 	protected void configure(final HttpSecurity http) throws Exception {
